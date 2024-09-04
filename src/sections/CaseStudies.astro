@@ -1,0 +1,51 @@
+---
+import CaseSlider from "@/components/CaseSlider.astro";
+import Arrow from "@/components/icons/Arrow.astro";
+
+const slides = [
+    {
+        text: 'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
+        link: "#",
+        extraStyles: '',
+    },
+    {
+        text: 'For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.',
+        link: "#",
+        extraStyles: 'border-x border-gray-500',
+    },
+    {
+        text: 'For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.',
+        link: "#",
+        extraStyles: '',
+    },
+]
+---
+
+<section id="caseStudies" class="mt-14 lg:mt-36">
+    <h2 class="text-3xl text-center font-semibold w-52 mx-auto px-[7px]">
+        <mark class="bg-[#B9FF66] rounded-lg">
+            Case Studies
+        </mark>
+    </h2>
+    <p class="mt-8 lg:mt-3 mb-10 px-5 text-[16px] leading-6 text-center">
+        Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies
+    </p>
+    <div class="hidden lg:flex flex-row bg-[#191A23] rounded-[45px] py-20 px-4">
+        {
+            slides.map(slide => (
+                <article class={`bg-[#191A23] w-[90%] ${slide.extraStyles}`}>
+                    <div class="px-12">
+                        <p class="text-[16px] text-white mb-5">{slide.text}</p>
+                        <div class="flex flex-row items-center gap-4">
+                            <a href={slide.link} class="text-[#B9FF66] text-[20px]">Learn more</a>
+                            <Arrow />
+                        </div>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+    <div class="lg:hidden">
+        <CaseSlider />
+    </div>
+</section>

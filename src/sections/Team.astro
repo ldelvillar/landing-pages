@@ -1,0 +1,85 @@
+---
+import TeamMember from "@/components/TeamMember.astro"
+
+const teamMembers = [
+    {
+        picture: '/images/teamMember.webp',
+        name: 'John Smith',
+        role: 'CEO and founder',
+        description: '10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy',
+        linkedin:'https://www.linkedin.com/in/lucas-del-villar-v%C3%A1zquez-b7986a29a/',
+        extraStyles: '',
+    },
+    {
+        picture: '/images/teamMember.webp',
+        name: 'John Smith',
+        role: 'Director of Operations',
+        description: '7+ years of experience in project management and team leadership. Strong organizational and communication skills',
+        linkedin:'https://www.linkedin.com/in/lucas-del-villar-v%C3%A1zquez-b7986a29a/',
+        extraStyles: '',
+    },
+    {
+        picture: '/images/teamMember.webp',
+        name: 'John Smith',
+        role: 'Senior SEO Specialist',
+        description: '5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization',
+        linkedin:'https://www.linkedin.com/in/lucas-del-villar-v%C3%A1zquez-b7986a29a/',
+        extraStyles: '',
+    },
+    {
+        picture: '/images/teamMember.webp',
+        name: 'John Smith',
+        role: 'PPC Manager',
+        description: '3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis',
+        linkedin:'https://www.linkedin.com/in/lucas-del-villar-v%C3%A1zquez-b7986a29a/',
+        extraStyles: '',
+    },
+    {
+        picture: '/images/teamMember.webp',
+        name: 'John Smith',
+        role: 'PPC Manager',
+        description: '3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis',
+        linkedin:'https://www.linkedin.com/in/lucas-del-villar-v%C3%A1zquez-b7986a29a/',
+        extraStyles: 'hidden lg:block',
+    },
+    {
+        picture: '/images/teamMember.webp',
+        name: 'John Smith',
+        role: 'PPC Manager',
+        description: '3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis',
+        linkedin:'https://www.linkedin.com/in/lucas-del-villar-v%C3%A1zquez-b7986a29a/',
+        extraStyles: 'hidden lg:block',
+    },
+]
+---
+
+<section id="team" class="mt-14 lg:mt-36 mx-5">
+    <h2 class="text-3xl text-center font-semibold w-36 mx-auto px-[7px]">
+        <mark class="bg-[#B9FF66] rounded-lg">
+            Team
+        </mark>
+    </h2>
+    <p class="mt-8 lg:mt-3 mb-10 text-[16px] leading-6 text-center">
+        Meet the skilled and experienced team behind our successful digital marketing strategies
+    </p>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {
+            teamMembers.map(member => (
+                <div class={member.extraStyles}>
+                    <TeamMember
+                        picture={member.picture}
+                        name={member.name}
+                        role={member.role}
+                        description={member.description}
+                        linkedin={member.linkedin}
+                    />
+                </div>
+            ))
+        }
+    </div>
+    <div class="w-full flex items-end">
+        <a href="#" class="mt-9 bg-[#191A23] text-lg text-white text-center w-full lg:w-auto lg:px-8 py-4 lg:ml-auto rounded-[14px]">
+            See all team
+        </a>
+    </div>
+</section>

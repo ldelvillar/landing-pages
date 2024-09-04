@@ -1,0 +1,69 @@
+---
+import Logo from "./icons/Logo.astro";
+import Menu from "./icons/Menu.astro";
+---
+
+<header class="py-4 sticky top-0 z-40 mb-10 px-5 bg-white">
+    <nav>
+        <div class="flex flex-row items-center">
+            <a href="/" class="flex flex-row items-center lg:pl-16">
+                <Logo color="black" />
+                <h3 class="text-2xl font-space font-semibold ml-2">Positivus</h3>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 ml-auto mr-24">
+                <a href="#about">About us</a>
+                <a href="#services">Services</a>
+                <a href="#useCases">Use Cases</a>
+                <a href="#">Pricing</a>
+                <a href="#">Blog</a>
+                <a href="#" class="border border-black rounded-[14px] py-3 px-5">Request a quote</a>
+            </nav>
+            <div class="lg:hidden ml-auto">
+                <button id="menu-toggle">
+                    <Menu />
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="lg:hidden h-screen hidden">
+        <ul class="space-y-4 p-4">
+            <li>
+                <a href="#about" class="block hover:text-gray-900">About us</a>
+            </li>
+            <li>
+                <a href="#services" class="block hover:text-gray-900">Services</a>
+            </li>
+            <li>
+                <a href="#useCases" class="block hover:text-gray-900">Use Cases</a>
+            </li>
+            <li>
+                <a href="#" class="block hover:text-gray-900">Pricing</a>
+            </li>
+            <li>
+                <a href="#" class="block hover:text-gray-900">Blog</a>
+            </li>
+            <li>
+                <a href="#" class="block hover:text-gray-900">Request a quote</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    // Toggle mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('block');
+    });
+
+    document.addEventListener('scroll', () => {
+        if (window.scrollY > 0){
+            document.getElementsByTagName('header')[0].classList.add("shadow-md")
+        } else {
+            document.getElementsByTagName('header')[0].classList.remove("shadow-md")
+        }
+    })
+</script>

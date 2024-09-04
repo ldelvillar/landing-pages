@@ -1,0 +1,80 @@
+---
+import Card from "@/components/ServiceCard.astro"
+
+const cards = [
+    {
+        text1: 'Search engine',
+        text2: 'optimization',
+        background: '#F3F3F3',
+        textBackground: '#B9FF66',
+        image: '/images/card1.webp',
+    },
+    {
+        text1: 'Pay-per-click',
+        text2: 'advertising',
+        background: '#B9FF66',
+        textBackground: 'white',
+        image: '/images/card2.webp',
+    },
+    {
+        text1: 'Social media',
+        text2: 'marketing',
+        background: '#191A23',
+        textBackground: 'white',
+        image: '/images/card3.webp',
+    },
+    {
+        text1: 'Email',
+        text2: 'marketing',
+        background: '#F3F3F3',
+        textBackground: '#B9FF66',
+        image: '/images/card4.webp',
+    },
+    {
+        text1: 'Content',
+        text2: 'creation',
+        background: '#B9FF66',
+        textBackground: 'white',
+        image: '/images/card5.webp',
+    },
+    {
+        text1: 'Analytics and',
+        text2: 'tracking',
+        background: '#191A23',
+        textBackground: 'white',
+        image: '/images/card6.webp',
+    },
+]
+---
+
+<section id="services" class="mt-14 lg:mt-36">
+    <h2 class="text-3xl text-center font-semibold w-52 mx-auto px-[7px]">
+        <mark class="bg-[#B9FF66] rounded-lg">
+            Services
+        </mark>
+    </h2>
+    <p class="mt-8 lg:mt-3 mb-10 px-5 text-[16px] leading-6 text-center">
+        At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:
+    </p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 mx-5 gap-8">
+        {cards.map(card => (
+            <Card
+                text1={card.text1}
+                text2={card.text2}
+                background={card.background}
+                textBackground={card.textBackground}
+                image={card.image}
+            />
+        ))}
+    </div>
+    <div class="mx-5 mt-[70px] bg-[#F3F3F3] rounded-[45px] flex flex-row">
+        <div class="p-12 lg:w-[45%]">
+            <h3 class="text-2xl font-semibold mb-5">Let's make things happen</h3>
+            <p class="text-[16px] mb-5">Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
+            <button class="h-[68px] w-full lg:w-2/3 bg-[#191A23] text-white text-xl rounded-xl">
+                Get your proposal
+            </button>
+        </div>
+        <img src="/images/proposalIllustration.webp" alt="illustration" class="hidden lg:block ml-36 select-none pointer-events-none w-96 h-auto">
+    </div>
+</section>

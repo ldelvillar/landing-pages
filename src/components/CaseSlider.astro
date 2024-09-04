@@ -1,0 +1,69 @@
+---
+import Arrow from "./icons/Arrow.astro";
+
+const slides = [
+    {
+        text: 'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
+        link: "https://google.com"
+    },
+    {
+        text: 'For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.',
+        link: "https://google.com"
+    },
+    {
+        text: 'For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.',
+        link: "https://google.com"
+    },
+]
+---
+
+<div class="mx-5 bg-[#191A23] text-white rounded-[45px]">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            {
+                slides.map(slide => (
+                    <article class="swiper-slide bg-[#191A23] rounded-[45px] w-[90%]">
+                        <div class="px-12 pt-[42px] pb-[42px]">
+                            <p class="text-[16px] text-white mb-5">{slide.text}</p>
+                            <div class="flex flex-row items-center gap-4">
+                                <a href={slide.link} class="text-[#B9FF66] text-[20px]">Learn more</a>
+                                <Arrow />
+                            </div>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .swiper-button-next, .swiper-button-prev{
+        color: #B9FF66;
+    }
+</style>
+
+<script>
+    import Swiper from 'swiper';
+    import { Navigation, Pagination } from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+
+    const swiper = new Swiper('.swiper', {
+        modules:[Navigation, Pagination],
+        direction: 'horizontal',
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>

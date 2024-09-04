@@ -1,0 +1,29 @@
+---
+import Linkedin from '../components/icons/Linkedin.astro'
+
+interface Props {
+    picture: string,
+    name: string,
+    role: string,
+    description: string,
+    linkedin: string,
+}
+
+const { picture, name, role, description, linkedin } = Astro.props
+---
+
+<article class="border border-black border-b-[6px] h-[300px] rounded-[45px]">
+    <div class="relative mx-12 my-10 flex flex-col">
+        <a href={linkedin} target="_blank" class="absolute top-0 right-0">
+            <Linkedin bg="black" color="#B9FF66" />
+        <a/>
+        <div class="border-b-2 border-b-black flex flex-row items-end gap-5 pb-5">
+            <img src={picture} alt="Team member">
+            <div class="flex flex-col">
+                <h4 class="text-lg font-semibold">{name}</h4>
+                <p class="text-sm">{role}</p>
+            </div>
+        </div>
+        <p class="mt-5 text-sm">{description}</p>
+    </div>
+</article>

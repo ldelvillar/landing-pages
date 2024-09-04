@@ -1,0 +1,36 @@
+---
+import Facebook from "./icons/Facebook.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Logo from "./icons/Logo.astro";
+import Twitter from "./icons/Twitter.astro";
+---
+
+<footer class="bg-[#191A23] text-gray-300">
+    <div class="flex flex-col items-center pt-12 mx-5">
+        <div class="flex flex-row items-center">
+            <Logo color="white" />
+            <h4 class="text-xl pl-2 text-white">Positivus</h4>
+        </div>
+        <nav class="flex flex-col lg:flex-row mt-9 text-center space-x-4">
+            <a href="#team" class="hover:underline">About us</a>
+            <a href="#services" class="hover:underline">Services</a>
+            <a href="#" class="hover:underline">Use cases</a>
+            <a href="#" class="hover:underline">Pricing</a>
+        </nav>
+        <ul class="py-9 text-center">
+            <mark class="bg-[#B9FF66] p-1 rounded-lg font-semibold">Contact us:</mark>
+            <li class="mt-9 hover:underline"><a href="mailto:info@positivus.com">Email: info@positivus.com</a></li>
+            <li>Phone: 555-555-5555</li>
+            <li>Address: USA</li>
+        </ul>
+    </div>
+    <div class="flex flex-row justify-center gap-5 border-b border-gray-300 pb-8 mx-4">
+        <a href="#" target="_blank"><Linkedin bg="white" color="black" /></a>
+        <a href="#" target="_blank"><Facebook /></a>
+        <a href="#" target="_blank"><Twitter /></a>
+    </div>
+    <div class="text-center pt-9 pb-7 lg:flex lg:justify-center lg:gap-5">
+        <p>&copy; 2024 Positivus. All rights reserved</p>
+        <a href="#" class="underline">Privacy policy</a>
+    </div>
+</footer>

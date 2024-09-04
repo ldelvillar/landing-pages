@@ -1,0 +1,36 @@
+---
+interface Props {
+    text1: string,
+    text2: string,
+    background: string,
+    textBackground: string,
+    image: string
+}
+
+const { text1, text2, background, textBackground, image } = Astro.props
+const bg = `bg-[${background}]`
+const textBg = textBackground === "white" ? 'bg-white' : `bg-[${textBackground}]`
+
+const textColor = background === "#191A23" ? "text-white" : "text-black"
+---
+
+<article class=`relative border border-black border-b-[6px] rounded-[45px] ${bg}`>
+    <div class="flex flex-row items-center">
+        <div class="grid grid-cols-1 m-12">
+            <h3 class="text-2xl font-semibold">
+                <mark class={`${textBg} rounded-[7px]`}>{text1}</mark>
+            </h3>
+            <h3 class="text-2xl font-semibold">
+                <mark class={`${textBg} rounded-[7px]`}>{text2}</mark>
+            </h3>
+            <div class="grid grid-cols-2">
+                <a href="#" class="self-end flex flex-row items-center gap-3 lg:mt-16">
+                    <img src="/images/learnmore.webp" alt="Learn more button" class="w-10 h-10">
+                    <p class=`hidden lg:block ${textColor}`>Learn more</p>
+                </a>
+                <img src={image} alt="Card image" class="lg:hidden w-40 h-auto">
+            </div>
+        </div>
+        <img src={image} alt="Card image" class="hidden lg:block m-10 w-40 h-auto">
+    </div>
+</article>

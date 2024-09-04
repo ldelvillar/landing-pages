@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import CaseStudies from '@/sections/CaseStudies.astro';
+import Clients from '@/sections/Clients.astro';
+import Hero from '@/sections/Hero.astro';
+import Services from '@/sections/Services.astro';
+import WorkingProcess from '@/sections/WorkingProcess.astro';
+import Team from '@/sections/Team.astro';
+import Testimonials from '@/sections/Testimonials.astro';
+import Contact from '@/sections/Contact.astro';
+import Footer from '@/components/Footer.astro';
+---
+
+<Layout title="Positivus">
+	<Header />
+	<main class="max-w-6xl mx-auto">	
+		<Hero />
+		<Clients />
+		<Services />
+		<CaseStudies />
+		<WorkingProcess />
+		<Team />
+		<Testimonials />
+		<Contact />
+	</main>
+	<Footer />
+</Layout>

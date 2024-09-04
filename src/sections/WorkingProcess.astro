@@ -1,0 +1,105 @@
+---
+import PlusIcon from '@/components/icons/PlusIcon.astro'
+
+const steps = [
+    {
+        number: '01',
+        title: 'Consultation',
+        text: 'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+    },
+    {
+        number: '02',
+        title: 'Research and Strategy Development',
+        text: 'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+    },
+    {
+        number: '03',
+        title: 'Implementation',
+        text: 'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+    },
+    {
+        number: '04',
+        title: 'Monitoring and optimization',
+        text: 'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+    },
+    {
+        number: '05',
+        title: 'Reporting and communication',
+        text: 'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+    },
+    {
+        number: '06',
+        title: 'Continual improvement',
+        text: 'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
+    },
+]
+---
+
+<section id="workingProcess" class="mt-14 lg:mt-36">
+    <h2 class="text-3xl text-center font-semibold w-52 lg:w-auto mx-auto px-[7px]">
+        <mark class="bg-[#B9FF66] rounded-lg">
+            Our working process
+        </mark>
+    </h2>
+    <p class="mt-8 lg:mt-3 mb-10 px-5 text-[16px] leading-6 text-center">
+        Step-by-Step Guide to Achieving Your Business Goals
+    </p>
+    <article class="mt-[30px] grid grid-cols-1 gap-5 mx-5">
+        {
+            steps.map(step => (
+                <div>
+                    <article class="article flex flex-row justify-between items-center p-7 border border-b-[6px] border-black rounded-[45px] bg-[#F3F3F3]">
+                        <div class="flex flex-row items-center">
+                            <h2 class="text-3xl font-semibold pr-8">{step.number}</h2>
+                            <h4 class="text-xl font-semibold">{step.title}</h4>
+                        </div>
+                        <button class="toggle-button size-7">
+                            <PlusIcon />
+                        </button>
+                    </article>
+
+                    <article class="article-expanded hidden border border-b-[6px] border-black rounded-[45px] bg-[#B9FF66] p-7 ">
+                        <div class="flex flex-row justify-between items-center pb-7 border-b border-black">
+                            <div class="flex flex-row items-center">
+                                <h2 class="text-3xl font-semibold pr-8">{step.number}</h4>
+                                <h4 class="text-xl font-semibold">{step.title}</h4>
+                            </div>
+                            <button class="toggle-button-expanded size-7">
+                                <PlusIcon />
+                            </button>
+                        </div>
+                        <p class="pt-7">{step.text}</p>
+                    </article>
+                </div>
+            ))
+        }
+    </article>
+</section>
+
+<script>
+    document.querySelectorAll('.toggle-button').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const article = document.querySelectorAll('.article')[index];
+            const articleExpanded = document.querySelectorAll('.article-expanded')[index];
+            if (article.classList.contains('flex')) {
+                article.classList.remove('flex');
+                article.classList.add('hidden');
+                articleExpanded.classList.remove('hidden');
+                articleExpanded.classList.add('block');
+            }
+        });
+    });
+
+    document.querySelectorAll('.toggle-button-expanded').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const article = document.querySelectorAll('.article')[index];
+            const articleExpanded = document.querySelectorAll('.article-expanded')[index];
+            if (articleExpanded.classList.contains('block')) {
+                articleExpanded.classList.remove('block');
+                articleExpanded.classList.add('hidden');
+                article.classList.remove('hidden');
+                article.classList.add('flex');
+            }
+        });
+    });
+</script>
